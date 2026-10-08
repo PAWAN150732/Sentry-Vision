@@ -1,0 +1,912 @@
+﻿
+Title: Live Content
+
+Description: Fetched live
+
+Source: https://56cf2932-sentryvision-dashboard-ux.netlify.app/
+
+---
+
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" 
+name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=
+Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
+rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer 
+base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-
+child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script 
+src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: 
+{ extend: { "colors": { "surface-container-lowest": "#090e1c", "on-secondary": "#472a00", "on-tertiary-container": 
+"#004e34", "primary-fixed-dim": "#7bd0ff", "on-primary-fixed-variant": "#004c69", "primary-container": "#38bdf8", 
+"secondary-fixed": "#ffddb8", "on-secondary-fixed-variant": "#653e00", "outline": "#87929a", "inverse-surface": 
+"#dee2f6", "tertiary-fixed-dim": "#4edea3", "on-primary": "#00354a", "on-primary-fixed": "#001e2c", 
+"secondary-fixed-dim": "#ffb95f", "surface-container-low": "#161b2a", "tertiary": "#56e5a9", "on-error-container": 
+"#ffdad6", "error": "#ffb4ab", "on-secondary-fixed": "#2a1700", "surface-container-high": "#252a39", "on-error": 
+"#690005", "tertiary-container": "#30c88f", "primary": "#8ed5ff", "secondary-container": "#ee9800", "surface-bright": 
+"#343948", "surface-dim": "#0e1321", "surface-tint": "#7bd0ff", "tertiary-fixed": "#6ffbbe", 
+"on-tertiary-fixed-variant": "#005236", "primary-fixed": "#c4e7ff", "error-container": "#93000a", "outline-variant": 
+"#3e484f", "on-primary-container": "#004965", "surface": "#0e1321", "background": "#0e1321", "on-secondary-container": 
+"#5b3800", "surface-variant": "#303444", "on-tertiary-fixed": "#002113", "inverse-primary": "#00668a", 
+"inverse-on-surface": "#2b303f", "surface-container": "#1a1f2e", "on-surface": "#dee2f6", "surface-container-highest": 
+"#303444", "on-surface-variant": "#bdc8d1", "on-tertiary": "#003824", "secondary": "#ffb95f", "on-background": 
+"#dee2f6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": 
+{ "gutter-dense": "0.5rem", "margin-compact": "0.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "space-xl": 
+"1.5rem", "space-md": "0.75rem", "gutter": "0.75rem", "margin": "1rem", "space-sm": "0.5rem" }, "fontFamily": { 
+"label-sm": ["Inter"], "headline-md": ["Inter"], "headline-xl": ["Inter"], "headline-sm": ["Inter"], "data-mono": 
+["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], 
+"headline-lg": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", 
+"letterSpacing": "0.05em", "fontWeight": "600" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": 
+"0em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", 
+"fontWeight": "700" }], "headline-sm": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" 
+}], "data-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], 
+"headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": 
+["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-md": ["12px", { 
+"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }], "body-lg": ["15px", { "lineHeight": "22px", 
+"letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": 
+"-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", 
+"fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface 
+antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface-container-lowest/90 backdrop-blur-md 
+shadow-[0_1px_8px_rgba(0,0,0,0.4)] px-gutter flex items-center justify-between"><div class="flex items-center 
+gap-space-md"><img alt="SentryVision AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/
+aida/AEtjO1WcB8LJoVcjBy2emyoTb28EdTW9wMBVqIGMf0kQIK2ACpkPuesMubEup--PBmSlHb7X-fRpgnvXSpeAY6sGJFDOLcY8LFWc7JMRumKtYEaRhI
+ICzlUvuGFlrv1RsqcKYBRW1ZJWlN0pttkjFOiportugG6mdIsBY7CowjXFP_6dpx5rbmakMV55tjZ3fUPcb5qMZtrk0LcW_NuCbGkv0727yD_pXLidCJW1_
+rbvgHpFIQvKH69fHJ8dQYM"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm 
+text-on-surface uppercase tracking-wider">SentryVision AI</span><span class="px-space-xs py-0.5 rounded 
+bg-surface-container-high text-primary font-data-mono text-[10px] tracking-wide">v2.4 YOLOv8-BYTE</span></div><div 
+class="hidden 2xl:flex items-center gap-space-sm pl-space-md"><div class="flex items-center gap-1.5 px-space-sm py-1 
+rounded bg-surface-container-low"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex 
+h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 
+bg-tertiary"></span></span><span class="font-data-mono text-data-mono text-tertiary uppercase">LIVE</span></div><div 
+class="px-space-sm py-1 rounded bg-surface-container-low font-data-mono text-data-mono 
+text-on-surface-variant">Engine: <span class="text-primary">ONLINE (CUDA RTX 4090)</span></div><div class="px-space-sm 
+py-1 rounded bg-surface-container-low font-data-mono text-data-mono text-on-surface-variant">FPS: <span 
+class="text-tertiary font-bold">38.4</span></div><div class="px-space-sm py-1 rounded bg-surface-container-low 
+font-data-mono text-data-mono text-on-surface-variant">Model: <span class="text-on-surface">best.pt</span> <span 
+class="text-secondary-fixed-dim">(mAP@50: 93.8%)</span></div></div></div><nav class="hidden lg:flex items-center 
+gap-space-xs bg-surface-container-lowest p-space-xs rounded-lg" data-active-classes="bg-surface-container-high 
+text-primary font-semibold"><a aria-current="page" class="px-space-sm py-1 rounded transition-colors uppercase 
+tracking-wider bg-surface-container-high text-primary font-semibold" data-path="live-vision-feed" href="#">Cam 01 - 
+Fab Bay</a><a aria-current="page" class="px-space-sm py-1 rounded transition-colors uppercase tracking-wider 
+bg-surface-container-high text-primary font-semibold" data-path="live-vision-feed" href="#">Cam 02 - Scaffold 4</a><a 
+aria-current="page" class="px-space-sm py-1 rounded transition-colors uppercase tracking-wider 
+bg-surface-container-high text-primary font-semibold" data-path="live-vision-feed" href="#">Cam 03 - Crane 
+Assembly</a><a aria-current="page" class="px-space-sm py-1 rounded transition-colors uppercase tracking-wider 
+bg-surface-container-high text-primary font-semibold" data-path="live-vision-feed" href="#">Cam 04 - Chem 
+Processing</a></nav><div class="flex items-center gap-space-sm"><button class="p-space-xs rounded bg-surface-container 
+hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center 
+justify-center" title="Mute Safety Siren" type="button"><span class="material-symbols-outlined 
+text-[20px]">volume_off</span></button><button class="relative p-space-xs rounded bg-surface-container 
+hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center 
+justify-center" title="Active Breaches" type="button"><span class="material-symbols-outlined 
+text-[20px]">notifications</span><span class="absolute -top-1 -right-1 px-1 py-0.2 bg-error text-on-error 
+font-data-mono text-[10px] font-bold rounded">3 Active</span></button><button class="p-space-xs rounded 
+bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors 
+flex items-center justify-center" title="Toggle Console Fullscreen" type="button"><span 
+class="material-symbols-outlined text-[20px]">fullscreen</span></button><div class="flex items-center gap-space-xs 
+pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span 
+class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col 
+text-left"><span class="font-label-sm text-label-sm text-on-surface leading-none">Officer Vance</span><span 
+class="font-data-mono text-[10px] text-tertiary leading-none mt-0.5">Shift Alpha - 
+Primary</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest 
+z-40 flex flex-col justify-between p-space-sm"><div class="flex flex-col gap-space-md"><div class="px-space-sm 
+py-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Tactical 
+Matrix</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary 
+font-bold"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg 
+transition-all bg-surface-container-high text-primary font-bold" data-path="live-vision-feed" href="#"><span 
+class="material-symbols-outlined text-[20px]">videocam</span><span class="font-label-md text-label-md uppercase 
+tracking-wider">Live Vision Feed</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg 
+text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="incident-log" 
+href="#"><span class="material-symbols-outlined text-[20px]">warning</span><span class="font-label-md text-label-md 
+uppercase tracking-wider">Incident Log</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm 
+rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" 
+data-path="model-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span 
+class="font-label-md text-label-md uppercase tracking-wider">Model Telemetry</span></a><a class="flex items-center 
+gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container 
+hover:text-on-surface transition-all" data-path="spatial-rules" href="#"><span class="material-symbols-outlined 
+text-[20px]">polyline</span><span class="font-label-md text-label-md uppercase tracking-wider">Spatial 
+Rules</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant 
+hover:bg-surface-container hover:text-on-surface transition-all" data-path="system-settings" href="#"><span 
+class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-md text-label-md uppercase 
+tracking-wider">YOLO / RTSP Config</span></a></nav></div><div class="bg-surface-container-low p-space-sm rounded-lg 
+flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-surface-variant font-data-mono 
+text-[11px]"><span>GPU LATENCY</span><span class="text-tertiary">14.2ms</span></div><div class="flex items-center 
+justify-between text-on-surface-variant font-data-mono text-[11px]"><span>BUFFER DROP</span><span 
+class="text-on-surface">0.00%</span></div><div class="w-full bg-surface-container-highest h-1 rounded overflow-hidden 
+mt-space-xs"><div class="bg-primary h-full w-[84%]"></div></div></div></aside><div class="pl-64"><main class="w-full 
+pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- TOP KPI HUD BAR -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-sm">
+<!-- CARD 1: ACTIVE DETECTIONS -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative 
+overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Active Workers</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-data-mono text-[10px] 
+tracking-wide">YOLO-DETECT</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Floor Bay A</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-16 h-6 text-primary" fill="none" viewbox="0 0 64 24">
+<path d="M1 18L12 14L24 16L36 8L48 11L63 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" 
+stroke-width="2"></path>
+<circle cx="63" cy="4" fill="currentColor" r="2"></circle>
+</svg>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs 
+mt-space-xs">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>12 Compliant
+          </span>
+<span class="flex items-center gap-1 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>2 Violations
+          </span>
+</div>
+</div>
+<!-- CARD 2: OVERALL PPE COMPLIANCE -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative 
+overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">PPE Compliance</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary/10 text-tertiary font-data-mono text-[10px] font-bold">+3.2% vs 
+24h</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">85.7<span class="text-headline-md 
+text-tertiary">%</span></span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">Target: >95.0%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded overflow-hidden mt-space-xs flex">
+<div class="bg-tertiary h-full w-[85.7%]"></div>
+<div class="bg-error h-full w-[14.3%]"></div>
+</div>
+</div>
+<!-- CARD 3: CRITICAL VIOLATIONS (ACTIVE) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative 
+overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="absolute -right-6 -top-6 w-20 h-20 bg-error/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-[18px] animate-pulse">crisis_alert</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Critical Violations</span>
+</div>
+<button class="px-space-xs py-0.5 rounded bg-error text-on-error hover:bg-error-container transition-colors 
+font-data-mono text-[10px] uppercase font-bold flex items-center gap-1 shadow-sm" id="siren-pulse-btn" 
+onclick="alert('DISPATCH CHIRP SENT TO BAY A WORKERS (IDs: #112, #128)')">
+<span class="material-symbols-outlined text-[12px]">volume_up</span> Chirp Bay
+          </button>
+</div>
+<div class="flex items-baseline justify-between mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-error font-bold">02</span>
+<span class="font-label-sm text-label-sm text-error uppercase">Active Breaches</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-data-mono text-[10px] text-error font-semibold flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>ID #112: Helmet
+            </span>
+<span class="font-data-mono text-[10px] text-secondary font-semibold flex items-center justify-end gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>ID #128: Vest
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span class="font-data-mono text-[11px] text-on-surface-variant">Immediate Action Protocol L2</span>
+<span class="text-error font-data-mono text-[11px]">Severity: HIGH</span>
+</div>
+</div>
+<!-- CARD 4: INFERENCE & TRACK HEALTH -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between relative 
+overflow-hidden group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Inference Engine</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary/10 text-tertiary font-data-mono text-[10px]">HEALTHY</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">38.2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">FPS</span>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm text-tertiary">14.8ms</div>
+<div class="font-data-mono text-[10px] text-on-surface-variant">End-to-End Latency</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs 
+mt-space-xs">
+<span class="font-data-mono text-[11px]">ByteTrack ID Sw: <span class="text-primary font-bold">0.4%</span></span>
+<span class="font-data-mono text-[11px]">YOLOv8n-640 FP16</span>
+</div>
+</div>
+</div>
+<!-- MAIN BODY SPLIT LAYOUT (65% CANVAS + 35% ANALYTICS/INSPECTOR) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- LEFT: MAIN VISION CANVAS (COL 8 = ~67%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<!-- CCTV PLAYER CONTAINER -->
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl flex flex-col">
+<!-- CAMERA TOP METADATA HUD BAR -->
+<div class="bg-surface-container-low px-space-md py-space-xs flex items-center justify-between text-on-surface z-20">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-error/20 text-error">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-data-mono text-[11px] font-bold uppercase tracking-wider">LIVE FEED</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">CAM-01 â€¢ FABRICATION & ASSEMBLY BAY A</span>
+<span class="text-outline text-body-sm hidden sm:inline">|</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant hidden 
+sm:inline">RTSP://10.14.88.20:554/live/bay01</span>
+</div>
+<div class="flex items-center gap-space-md font-data-mono text-[11px]">
+<span class="text-on-surface-variant hidden md:inline">CODEC: <span class="text-on-surface">H.264 / 1080p</span></span>
+<span class="text-tertiary" id="clock-utc">2025-05-18 14:23:41 UTC</span>
+</div>
+</div>
+<!-- SIMULATED HIGH-FIDELITY VISION FEED WITH YOLO OVERLAYS -->
+<div class="relative w-full aspect-[16/9] bg-surface-container-lowest overflow-hidden select-none" 
+id="viewport-container">
+<!-- Real High-Detail Background Image of Industrial Plant Fabrication Bay -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="Expansive dark industrial manufacturing 
+bay interior, structural yellow steel girders, overhead yellow gantry crane, polished grey concrete floor with safety 
+painted yellow hazard stripes, atmospheric volumetric lighting, automated fabrication workshop with machinery and 
+scaffolding, surveillance camera angle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkbUbHC4c6aqJazpiyxeTW
+kNK_ngF3Fmg4MwqxMHVt489w8l6eUbjb-c9B0wpGA_67ELvmdZLl5IrfD6LodeNXNP4pS5QYSnrSKv3fl-w6GyPSOtwZI0zmEPciVrEYl0mAyEopG6V1RTZ
+fS-3iqFAt7Nepyd4sDajb3O4saU_rXwSyt8SOFw_n9iKhb86JDpGIjfYqIeLRFkx2-40oQ_thRpNnmf5rNVImstwbgKQCD6Q3fG5pCQOPWw"/>
+<!-- CCTV Dark Grime / Vignette & Scanning Grid Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent 
+to-surface-container-lowest/50 pointer-events-none"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(9,14,28,0.7)_100%)] 
+pointer-events-none"></div>
+<!-- In-Stream Spatial Safety Polygon Zone (Hazard Zone A) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1000 562">
+<!-- Safety Zone Polygon: Heavy Machinery Radius -->
+<polygon fill="rgba(238, 152, 0, 0.08)" points="420,180 720,180 760,420 380,420" stroke="#ee9800" 
+stroke-dasharray="6,4" stroke-width="1.5"></polygon>
+<text fill="#ee9800" font-family="Inter" font-size="11" font-weight="600" letter-spacing="1" x="430" y="200">ZONE B4: 
+RESTRICTED GANTRY BUFFER</text>
+<!-- Association Vectors (Dashed Cyan Lines IoU Head-to-Torso) -->
+<g id="association-vectors">
+<line stroke="#8ed5ff" stroke-dasharray="3,3" stroke-width="1" x1="220" x2="220" y1="230" y2="280"></line>
+<line stroke="#8ed5ff" stroke-dasharray="3,3" stroke-width="1" x1="820" x2="820" y1="210" y2="260"></line>
+</g>
+</svg>
+<!-- WORKER 1 (ID #104): COMPLIANT (Green Box) -->
+<div class="absolute top-[32%] left-[18%] w-[13%] h-[48%] pointer-events-auto group cursor-pointer" 
+onclick="selectWorker('104')">
+<!-- Person Bounding Box -->
+<div class="w-full h-full rounded border border-tertiary shadow-[0_0_8px_rgba(86,229,169,0.3)] bg-tertiary/5 relative 
+flex flex-col justify-between">
+<!-- Anchor Badge -->
+<div class="absolute -top-6 left-0 bg-surface-container-lowest px-1.5 py-0.5 rounded text-tertiary font-data-mono 
+text-[10px] flex items-center gap-1 shadow-md whitespace-nowrap">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-bold">ID #104</span>
+<span class="text-on-surface-variant">[COMPLIANT 98%]</span>
+</div>
+<!-- Sub-box: Helmet (Head area) -->
+<div class="absolute top-[3%] left-[22%] w-[56%] h-[20%] rounded border border-tertiary bg-tertiary/10">
+<span class="absolute -top-4 left-0 text-[8px] font-data-mono text-tertiary bg-surface-container-lowest px-0.5 
+rounded">Helmet [96%]</span>
+</div>
+<!-- Sub-box: Vest (Torso area) -->
+<div class="absolute top-[26%] left-[10%] w-[80%] h-[38%] rounded border border-tertiary bg-tertiary/10">
+<span class="absolute -top-4 right-0 text-[8px] font-data-mono text-tertiary bg-surface-container-lowest px-0.5 
+rounded">Vest [94%]</span>
+</div>
+<!-- Footer Tag -->
+<div class="mt-auto p-1 font-data-mono text-[9px] text-tertiary flex justify-between">
+<span>BAY 01</span>
+<span>v: 0.1m/s</span>
+</div>
+</div>
+</div>
+<!-- WORKER 2 (ID #112): VIOLATION - NO HELMET (Crimson/Red Pulse Box) -->
+<div class="absolute top-[28%] left-[45%] w-[15%] h-[54%] pointer-events-auto cursor-pointer" 
+onclick="selectWorker('112')">
+<div class="w-full h-full rounded border-2 border-error shadow-[0_0_15px_rgba(255,180,171,0.5)] bg-error/10 relative 
+flex flex-col justify-between animate-[pulse_2s_infinite]">
+<!-- Red Alert Tag -->
+<div class="absolute -top-6 left-0 bg-error text-on-error px-2 py-0.5 rounded font-data-mono text-[10px] font-bold 
+flex items-center gap-1 shadow-md whitespace-nowrap">
+<span class="material-symbols-outlined text-[12px] animate-spin">error</span>
+<span>ID #112 [VIOLATION: NO HELMET]</span>
+</div>
+<!-- Missing Helmet Warning Target Reticle -->
+<div class="absolute top-[2%] left-[25%] w-[50%] h-[20%] rounded border-2 border-dashed border-error bg-error/20 flex 
+items-center justify-center">
+<span class="material-symbols-outlined text-error text-[16px] animate-pulse">close</span>
+<span class="absolute -top-4 left-0 text-[9px] font-data-mono font-bold text-error bg-surface-container-lowest px-1 
+rounded">MISSING HELMET</span>
+</div>
+<!-- Sub-box: Vest Detected (PASS) -->
+<div class="absolute top-[25%] left-[12%] w-[76%] h-[36%] rounded border border-tertiary bg-tertiary/10">
+<span class="absolute -top-4 right-0 text-[8px] font-data-mono text-tertiary bg-surface-container-lowest px-0.5 
+rounded">Vest [91%]</span>
+</div>
+<!-- Footer Tag -->
+<div class="mt-auto bg-surface-container-lowest/90 p-1 font-data-mono text-[9px] text-error flex justify-between 
+items-center">
+<span class="font-bold">SECTOR 4 CRANE</span>
+<span class="px-1 bg-error text-on-error rounded font-bold">UNSAFE</span>
+</div>
+</div>
+</div>
+<!-- WORKER 3 (ID #119): COMPLIANT (Far bay background) -->
+<div class="absolute top-[22%] left-[78%] w-[9%] h-[34%] pointer-events-auto cursor-pointer opacity-90" 
+onclick="selectWorker('119')">
+<div class="w-full h-full rounded border border-tertiary shadow-[0_0_6px_rgba(86,229,169,0.2)] bg-tertiary/5 relative 
+flex flex-col justify-between">
+<div class="absolute -top-5 left-0 bg-surface-container-lowest px-1 py-0.2 rounded text-tertiary font-data-mono 
+text-[9px] flex items-center gap-1">
+<span>ID #119</span>
+<span class="text-on-surface-variant">[OK 95%]</span>
+</div>
+<div class="absolute top-[4%] left-[25%] w-[50%] h-[20%] rounded border border-tertiary bg-tertiary/10"></div>
+<div class="absolute top-[26%] left-[15%] w-[70%] h-[38%] rounded border border-tertiary bg-tertiary/10"></div>
+<div class="mt-auto p-0.5 font-data-mono text-[8px] text-on-surface-variant">Rack 08</div>
+</div>
+</div>
+<!-- WORKER 4 (ID #128): VIOLATION - NO VEST (Amber Box) -->
+<div class="absolute top-[38%] left-[64%] w-[12%] h-[46%] pointer-events-auto cursor-pointer" 
+onclick="selectWorker('128')">
+<div class="w-full h-full rounded border border-secondary shadow-[0_0_10px_rgba(255,185,95,0.4)] bg-secondary/5 
+relative flex flex-col justify-between">
+<!-- Tag -->
+<div class="absolute -top-6 left-0 bg-secondary text-on-secondary px-1.5 py-0.5 rounded font-data-mono text-[10px] 
+font-bold flex items-center gap-1 shadow-md whitespace-nowrap">
+<span class="material-symbols-outlined text-[12px]">warning</span>
+<span>ID #128 [VIOLATION: NO VEST]</span>
+</div>
+<!-- Helmet Sub-box: OK -->
+<div class="absolute top-[3%] left-[22%] w-[56%] h-[20%] rounded border border-tertiary bg-tertiary/10">
+<span class="absolute -top-4 left-0 text-[8px] font-data-mono text-tertiary bg-surface-container-lowest px-0.5 
+rounded">Helmet [92%]</span>
+</div>
+<!-- Missing Vest Box (Amber alert) -->
+<div class="absolute top-[26%] left-[10%] w-[80%] h-[36%] rounded border-2 border-dashed border-secondary 
+bg-secondary/20 flex items-center justify-center">
+<span class="text-[8px] font-data-mono font-bold text-secondary bg-surface-container-lowest px-1 rounded">MISSING 
+VEST</span>
+</div>
+<div class="mt-auto bg-surface-container-lowest/90 p-1 font-data-mono text-[9px] text-secondary flex justify-between">
+<span>BAY ENTRY</span>
+<span>v: 1.2m/s</span>
+</div>
+</div>
+</div>
+<!-- ON-SCREEN WATERMARK & CROSSHAIRS -->
+<div class="absolute top-4 right-4 pointer-events-none flex flex-col items-end gap-1 font-data-mono text-[10px] 
+text-on-surface-variant">
+<div class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/80">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>INFERENCE: BYTE-TRACK v2</span>
+</div>
+<span class="bg-surface-container-lowest/80 px-1 rounded text-primary">IOU THRESH: 0.45</span>
+</div>
+<!-- Optical Crosshair Overlay in Center -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20">
+<div class="w-16 h-16 border border-primary rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- CCTV PLAYER CONTROL DOCK -->
+<div class="bg-surface-container-low p-space-sm flex flex-wrap items-center justify-between gap-space-sm z-20">
+<!-- Left: Detection Filters / Layers -->
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-md text-label-md uppercase 
+tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check_box</span> Person (14)
+              </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors 
+font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span> Helmet (13)
+              </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface hover:text-primary transition-colors 
+font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> Vest (13)
+              </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface 
+transition-colors font-label-md text-label-md uppercase tracking-wider hidden sm:flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">alt_route</span> Trails
+              </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface 
+transition-colors font-label-md text-label-md uppercase tracking-wider hidden md:flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">polyline</span> IoU Rays
+              </button>
+</div>
+<!-- Right: Actions & Stream Ingestion switcher -->
+<div class="flex items-center gap-space-xs">
+<div class="hidden xl:flex items-center bg-surface-container-lowest rounded p-0.5">
+<button class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-data-mono text-[10px]">RTSP 
+1080p</button>
+<button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface font-data-mono 
+text-[10px]">Webcam 0</button>
+<button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface font-data-mono 
+text-[10px]">Upload MP4</button>
+</div>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-container text-on-surface 
+transition-colors flex items-center" onclick="alert('Snapshot saved to /captures/BAY01_142341.jpg')" title="Take 
+Snapshot">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-container text-error transition-colors 
+flex items-center" onclick="alert('Buffer record initiated for Bay A')" title="Record 30s Buffer">
+<span class="material-symbols-outlined text-[18px]">fiber_manual_record</span>
+</button>
+<button class="p-space-xs rounded bg-surface-container-high hover:bg-surface-container text-on-surface-variant 
+hover:text-on-surface transition-colors flex items-center" title="Stream Quality Settings">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CAMERA QUICK THUMBNAIL SWITCHER STRIP -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- CAM 01 (ACTIVE) -->
+<div class="bg-surface-container-low rounded-xl p-space-xs flex flex-col gap-1 shadow-md ring-1 ring-primary/40 
+cursor-pointer">
+<div class="relative w-full aspect-video rounded overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Security camera view of fabrication bay with metal cutting machines 
+and overhead scaffolding, dark ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW9uh8Vrpq3kt
+NwzEO31pNVRHNCtScwCs4eoPtd9mNrAnAwDBzG4mHPoZcUoNmzTTyoFb4YO0h4fPnCbkfxh5qti5iULtziwBeYQ_L1czhfPr0VEg2cGfEWQHL-J88KcQVNe
+xmBvi2CFJTDL4w97dAYIj1IUqCV_nzxzNRw_dwvKQeFFsk9uhTbZombm_C8dIVIxceWLzldqqc21kSr0ocUZukWH6NY5CosspcyYOtKNztHdTz_xDqEg"/>
+<span class="absolute top-1 left-1 px-1 bg-surface-container-lowest text-primary font-data-mono text-[9px] 
+rounded">CAM-01 [ACTIVE]</span>
+<span class="absolute bottom-1 right-1 px-1 bg-error text-on-error font-data-mono text-[9px] rounded font-bold">2 
+ALERTS</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-data-mono text-[10px] text-on-surface px-1">
+<span>Bay A Fab</span>
+<span class="text-tertiary">38 FPS</span>
+</div>
+</div>
+<!-- CAM 02 -->
+<div class="bg-surface-container-low rounded-xl p-space-xs flex flex-col gap-1 shadow-md hover:bg-surface-container 
+transition-colors cursor-pointer group">
+<div class="relative w-full aspect-video rounded overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Industrial construction 
+scaffold 4 surveillance feed showing high steel platform and pipework with safety netting" src="https://lh3.googleuserc
+ontent.com/aida-public/AB6AXuDN40ZFKX8sGHBsWzw3-jaiTGHONQ__scFI4sSjL2DQfDY5Z2nGTlpNYTSbXPUwMTgiGFgM92bPZb26zt9pOTsGB5uv
+XsTTq8kN6HpDetcBM3iAC3lI8iuVpfC7z-2AOjJfN_QBQH9m_cpzmOYiLg9wXPLhbw_tUwySwoP0xCXm6uuMVN4_Cu2uCbCZCUuXn-6KJuEEDUdbXJBEuyP
+J46dme5y247bfFjIae3gBPVvM6xh9klqoJtHedQ"/>
+<span class="absolute top-1 left-1 px-1 bg-surface-container-lowest text-on-surface font-data-mono text-[9px] 
+rounded">CAM-02</span>
+<span class="absolute bottom-1 right-1 px-1 bg-tertiary/20 text-tertiary font-data-mono text-[9px] rounded">OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-data-mono text-[10px] text-on-surface px-1">
+<span>Scaffold 4</span>
+<span class="text-on-surface-variant">30 FPS</span>
+</div>
+</div>
+<!-- CAM 03 -->
+<div class="bg-surface-container-low rounded-xl p-space-xs flex flex-col gap-1 shadow-md hover:bg-surface-container 
+transition-colors cursor-pointer group">
+<div class="relative w-full aspect-video rounded overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Crane assembly workshop 
+wide shot with large metal hooks and pulleys under warehouse lights" src="https://lh3.googleusercontent.com/aida-public
+/AB6AXuCjxqWS4JkVk4YiKQe4i1NgGrz4CAZF8dVRQa2mDXC5IUbRgKZrsjALkmOysIKTfMrKIVlzS2_7ARb0AvV9d-BZCs0_yTT_YyTwLW_zrg-cN6CunS
+5oPhQyzt27i_iN0An27jIs3_uEogdVpZ3DirPrf3ecmbz3jau4SYeAUlJfakn6AaaB0BXCwL-z94qfFgY_rpJprJIRtZ6iBfhQmpM-toMoNlAQCQh32hfZk
+vEqOBoki9LzJbADOw"/>
+<span class="absolute top-1 left-1 px-1 bg-surface-container-lowest text-on-surface font-data-mono text-[9px] 
+rounded">CAM-03</span>
+<span class="absolute bottom-1 right-1 px-1 bg-tertiary/20 text-tertiary font-data-mono text-[9px] rounded">OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-data-mono text-[10px] text-on-surface px-1">
+<span>Crane Assembly</span>
+<span class="text-on-surface-variant">25 FPS</span>
+</div>
+</div>
+<!-- CAM 04 -->
+<div class="bg-surface-container-low rounded-xl p-space-xs flex flex-col gap-1 shadow-md hover:bg-surface-container 
+transition-colors cursor-pointer group">
+<div class="relative w-full aspect-video rounded overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="Chemical processing 
+containment room with industrial tanks, hazmat conduits, and security monitoring vantage point" src="https://lh3.google
+usercontent.com/aida-public/AB6AXuAat4YNHAF2Gdx4n8Qe3M-RTres8UClQqb5o_BkwgM5f6sRCWazT2YkchepCsVfQ3ec8fUhL5QBJ9Vdcmy0ske
+R35gtOcHN1CWf14ZOv2jzf8nPBrq6BUhbsUuqDEU9l33WqQiFcQwyLsfAORTaRmcjjmdgrzaWY-XGPt-oLoB_VBSdz8UUddL8-abl6c368dApnjScI93H_C
+9-ZNNB8D40CoSCidzZln5m7WFdssqD9pTj-MIuPRI7Wg"/>
+<span class="absolute top-1 left-1 px-1 bg-surface-container-lowest text-on-surface font-data-mono text-[9px] 
+rounded">CAM-04</span>
+<span class="absolute bottom-1 right-1 px-1 bg-tertiary/20 text-tertiary font-data-mono text-[9px] rounded">OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-data-mono text-[10px] text-on-surface px-1">
+<span>Chem Process</span>
+<span class="text-on-surface-variant">30 FPS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: LIVE ANALYTICS & WORKER BREAKDOWN (COL 4 = ~33%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- ACTIVE TRACKED WORKERS INSPECTOR -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">Tracked Workers</span>
+</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">4 in Field of View</span>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest p-1 rounded-lg">
+<button class="flex-1 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase 
+font-bold text-center">All (4)</button>
+<button class="flex-1 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm uppercase 
+text-center">Violations (2)</button>
+<button class="flex-1 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm uppercase 
+text-center">Compliant (2)</button>
+</div>
+<!-- Worker List -->
+<div class="flex flex-col gap-space-sm max-h-[420px] overflow-y-auto pr-1">
+<!-- WORKER #112: CRITICAL (RED) -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs relative overflow-hidden shadow-sm 
+ring-1 ring-error/50">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-error text-on-error font-data-mono text-[10px] font-bold">ID #112</span>
+<span class="font-label-md text-label-md text-error font-bold">CRITICAL BREACH</span>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Dur: 3m 12s</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-data-mono text-[11px] mt-1">
+<div class="bg-surface-container-low p-1 rounded">
+<span class="text-on-surface-variant block text-[9px]">LOCATION</span>
+<span class="text-on-surface">Sector 4 (Gantry)</span>
+</div>
+<div class="bg-surface-container-low p-1 rounded">
+<span class="text-on-surface-variant block text-[9px]">STATE</span>
+<span class="text-error font-bold">STATIONARY</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-error/10 p-1.5 rounded mt-1">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span class="font-data-mono text-[11px] font-bold">MISSING: Hard Hat / Helmet</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-data-mono text-[10px] font-bold">FAIL</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<button class="flex-1 py-1 rounded bg-error text-on-error hover:bg-error-container transition-colors font-label-sm 
+text-label-sm uppercase font-bold flex items-center justify-center gap-1" onclick="alert('Audible siren chirp sent 
+directly to Sector 4 speaker')">
+<span class="material-symbols-outlined text-[14px]">volume_up</span> Chirp Siren
+                </button>
+<button class="px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface 
+transition-colors font-label-sm text-label-sm uppercase flex items-center justify-center" onclick="alert('Incident 
+INC-849 logged into permanent audit file')">
+                  Log
+                </button>
+<button class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface 
+transition-colors flex items-center justify-center" onclick="alert('Snapshot archived')">
+<span class="material-symbols-outlined text-[16px]">camera</span>
+</button>
+</div>
+</div>
+<!-- WORKER #128: WARNING (AMBER) -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs relative overflow-hidden shadow-sm 
+ring-1 ring-secondary/50">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-secondary text-on-secondary font-data-mono text-[10px] font-bold">ID 
+#128</span>
+<span class="font-label-md text-label-md text-secondary font-bold">WARNING BREACH</span>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Dur: 45s</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-data-mono text-[11px] mt-1">
+<div class="bg-surface-container-low p-1 rounded">
+<span class="text-on-surface-variant block text-[9px]">LOCATION</span>
+<span class="text-on-surface">Bay A Main Entry</span>
+</div>
+<div class="bg-surface-container-low p-1 rounded">
+<span class="text-on-surface-variant block text-[9px]">STATE</span>
+<span class="text-secondary">MOVING (1.2m/s)</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-secondary/10 p-1.5 rounded mt-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">safety_check</span>
+<span class="font-data-mono text-[11px] font-bold">MISSING: High-Vis Vest</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-data-mono text-[10px] font-bold">FAIL</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<button class="w-full py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-fixed transition-colors 
+font-label-sm text-label-sm uppercase font-bold flex items-center justify-center gap-1" onclick="alert('Radio 
+broadcast sent to Shift Supervisor Vance')">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span> Radio Supervisor
+                </button>
+</div>
+</div>
+<!-- WORKER #104: FULL COMPLIANCE (GREEN) -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs shadow-sm 
+hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary/20 text-tertiary font-data-mono text-[10px] font-bold">ID 
+#104</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">FULLY COMPLIANT</span>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Shift: 42m</span>
+</div>
+<div class="flex items-center gap-space-sm text-data-mono text-[11px] mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check</span> Helmet OK (96%)
+                </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check</span> Vest OK (94%)
+                </span>
+</div>
+</div>
+<!-- WORKER #119: FULL COMPLIANCE (GREEN) -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs shadow-sm 
+hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary/20 text-tertiary font-data-mono text-[10px] font-bold">ID 
+#119</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">FULLY COMPLIANT</span>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Shift: 1h 14m</span>
+</div>
+<div class="flex items-center gap-space-sm text-data-mono text-[11px] mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check</span> Helmet OK (95%)
+                </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check</span> Vest OK (98%)
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- REAL-TIME RULE ASSOCIATION ENGINE (src/ppe_engine.py VISUALIZER) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">account_tree</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">PPE Association Logic</span>
+</div>
+<span class="font-data-mono text-[10px] text-tertiary font-bold">ppe_engine.py:v4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Spatial heuristic: <code class="text-primary font-data-mono text-[11px]">Center(PPE) âˆˆ Head/Torso bbox 
+(Fallback: IoU > 0.45)</code>
+</p>
+<!-- Live Rule Check Output Terminal -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg font-data-mono text-[11px] flex flex-col gap-1.5 
+mt-space-xs border border-outline-variant/30 overflow-hidden">
+<div class="flex items-center justify-between text-on-surface-variant border-b border-outline-variant/20 pb-1">
+<span>LIVE ASSOCIATION STREAM</span>
+<span class="text-tertiary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full 
+bg-tertiary"></span>RUNNING</span>
+</div>
+<div class="text-on-surface flex items-start gap-1">
+<span class="text-tertiary font-bold">[PASS]</span>
+<span>Trk#104: H[IoU 0.82] V[IoU 0.78] â†’ Status: COMPLIANT</span>
+</div>
+<div class="text-error flex items-start gap-1">
+<span class="text-error font-bold">[FAIL]</span>
+<span>Trk#112: H[IoU 0.00] â†’ MISSING HELMET (p=0.99)</span>
+</div>
+<div class="text-on-surface flex items-start gap-1">
+<span class="text-tertiary font-bold">[PASS]</span>
+<span>Trk#119: H[IoU 0.74] V[IoU 0.81] â†’ Status: COMPLIANT</span>
+</div>
+<div class="text-secondary flex items-start gap-1">
+<span class="text-secondary font-bold">[FAIL]</span>
+<span>Trk#128: V[IoU 0.00] â†’ MISSING VEST (p=0.97)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM DRAWER: RECENT INCIDENT LOG (violation_log.csv) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-[22px]">history_toggle_off</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Audited Incident Log 
+(violation_log.csv)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous automated evidentiary logging of safety 
+perimeter and OSHA PPE breaches</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-space-md py-1.5 rounded bg-surface-container-high 
+hover:bg-surface-container-highest text-on-surface font-label-md text-label-md uppercase tracking-wider flex 
+items-center justify-center gap-1 transition-colors shadow-sm" onclick="downloadCSV()">
+<span class="material-symbols-outlined text-[16px]">download</span> Export CSV
+          </button>
+<button class="p-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface 
+transition-colors flex items-center justify-center" onclick="alert('Filter modal opened')">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- INCIDENT LOG TABLE -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-data-mono text-[12px] border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-3">Timestamp</th>
+<th class="py-2.5 px-3">Camera Source</th>
+<th class="py-2.5 px-3">Track ID</th>
+<th class="py-2.5 px-3">Violation Type</th>
+<th class="py-2.5 px-3">Model Confidence</th>
+<th class="py-2.5 px-3">Duration</th>
+<th class="py-2.5 px-3">Status</th>
+<th class="py-2.5 px-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- ROW 1: ACTIVE VIOLATION -->
+<tr class="bg-error/10 hover:bg-error/20 transition-colors">
+<td class="py-2.5 px-3 text-on-surface font-semibold">14:20:29 UTC</td>
+<td class="py-2.5 px-3 text-primary">CAM-01 [Bay A]</td>
+<td class="py-2.5 px-3 font-bold text-error">#112</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 text-error font-bold">
+<span class="material-symbols-outlined text-[14px]">autorenew</span> Missing Safety Helmet
+                </span>
+</td>
+<td class="py-2.5 px-3 text-on-surface">99.1% (YOLOv8)</td>
+<td class="py-2.5 px-3 text-error font-bold">03m 12s [ACTIVE]</td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-bold text-[10px] uppercase">UNRESOLVED</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-bold 
+text-[11px] inline-flex items-center gap-1 transition-colors" onclick="alert('Playing 10s pre-buffer replay for Track 
+#112')">
+<span class="material-symbols-outlined text-[14px]">replay_10</span> 10s Replay
+                </button>
+</td>
+</tr>
+<!-- ROW 2: ACTIVE WARNING -->
+<tr class="bg-secondary/10 hover:bg-secondary/20 transition-colors">
+<td class="py-2.5 px-3 text-on-surface">14:22:56 UTC</td>
+<td class="py-2.5 px-3 text-primary">CAM-01 [Bay A]</td>
+<td class="py-2.5 px-3 font-bold text-secondary">#128</td>
+<td class="py-2.5 px-3">
+<span class="inline-flex items-center gap-1 text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">safety_check</span> Missing High-Vis Vest
+                </span>
+</td>
+<td class="py-2.5 px-3 text-on-surface">97.4% (YOLOv8)</td>
+<td class="py-2.5 px-3 text-secondary">00m 45s [ACTIVE]</td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold text-[10px] uppercase">SUPERVISOR 
+NOTIFIED</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-bold 
+text-[11px] inline-flex items-center gap-1 transition-colors" onclick="alert('Playing 10s pre-buffer replay for Track 
+#128')">
+<span class="material-symbols-outlined text-[14px]">replay_10</span> 10s Replay
+                </button>
+</td>
+</tr>
+<!-- ROW 3: RESOLVED -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-2.5 px-3 text-on-surface-variant">14:02:18 UTC</td>
+<td class="py-2.5 px-3 text-on-surface-variant">CAM-02 [Scaffold 4]</td>
+<td class="py-2.5 px-3 text-on-surface">#098</td>
+<td class="py-2.5 px-3 text-on-surface-variant">No Harness Attached (Edge)</td>
+<td class="py-2.5 px-3 text-on-surface-variant">94.8%</td>
+<td class="py-2.5 px-3 text-on-surface-variant">01m 18s</td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-bold text-[10px] uppercase">CLEARED</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant 
+hover:text-on-surface text-[11px] inline-flex items-center gap-1 transition-colors" onclick="alert('Archived clip 
+loaded')">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> Clip
+                </button>
+</td>
+</tr>
+<!-- ROW 4: RESOLVED -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-2.5 px-3 text-on-surface-variant">13:45:02 UTC</td>
+<td class="py-2.5 px-3 text-on-surface-variant">CAM-03 [Crane Assembly]</td>
+<td class="py-2.5 px-3 text-on-surface">#084</td>
+<td class="py-2.5 px-3 text-on-surface-variant">Gantry Exclusion Zone Entry</td>
+<td class="py-2.5 px-3 text-on-surface-variant">98.6%</td>
+<td class="py-2.5 px-3 text-on-surface-variant">00m 22s</td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-bold text-[10px] uppercase">CLEARED</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant 
+hover:text-on-surface text-[11px] inline-flex items-center gap-1 transition-colors" onclick="alert('Archived clip 
+loaded')">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> Clip
+                </button>
+</td>
+</tr>
+<!-- ROW 5: RESOLVED -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-2.5 px-3 text-on-surface-variant">13:12:44 UTC</td>
+<td class="py-2.5 px-3 text-on-surface-variant">CAM-01 [Bay A]</td>
+<td class="py-2.5 px-3 text-on-surface">#067</td>
+<td class="py-2.5 px-3 text-on-surface-variant">Missing Safety Helmet</td>
+<td class="py-2.5 px-3 text-on-surface-variant">96.3%</td>
+<td class="py-2.5 px-3 text-on-surface-variant">00m 52s</td>
+<td class="py-2.5 px-3">
+<span class="px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-bold text-[10px] uppercase">CLEARED</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant 
+hover:text-on-surface text-[11px] inline-flex items-center gap-1 transition-colors" onclick="alert('Archived clip 
+loaded')">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> Clip
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Real-Time UTC Clock
+  function updateClock() {
+    const clockEl = document.getElementById('clock-utc');
+    if (clockEl) {
+      const now = new Date();
+      const year = now.getUTCFullYear();
+      const month = String(now.getUTCMonth() + 1).padStart(2, '0');
+      const day = String(now.getUTCDate()).padStart(2, '0');
+      const hours = String(now.getUTCHours()).padStart(2, '0');
+      const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+      clockEl.textContent = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} UTC`;
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Selection Handler for Worker Detections
+  function selectWorker(trackId) {
+    console.log(`Focused inspection on Track ID #${trackId}`);
+  }
+
+  // Export CSV Action
+  function downloadCSV() {
+    const csvContent = 
+"data:text/csv;charset=utf-8,Timestamp,Camera,Track_ID,Violation,Confidence,Duration,Status\\n2025-05-18 
+14:20:29,CAM-01,112,Missing Safety Helmet,0.991,03m 12s,ACTIVE\\n2025-05-18 14:22:56,CAM-01,128,Missing High-Vis 
+Vest,0.974,00m 45s,ACTIVE";
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "violation_log.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script></main></div></body></html>
+
+
+
